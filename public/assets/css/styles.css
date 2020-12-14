@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Saira Semi Condensed", sans-serif;
+    font-size: small;
+    text-transform: uppercase;
+}
+
+body {
+    min-height: 100vh;
+    min-width: 100vw; 
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+
+.container {
+    min-width: 100vw;
+    min-height: 100vh;
+    background: url("/public/assets/img/pokedex.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.left-screen-top {
+    width: 100%;
+    height: 1.5%;
+    position: relative;
+    display: flex;
+}
+
+.left-screen-bottom {
+    position: relative;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-screen {
+    position: relative;
+    width: 75%;
+    height: 90%;
+    padding: 0 1rem;
+    margin-right: 0.8rem;
+}
+
+.main-screen-topLights {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-screen-display {
+    font-weight: 600;
+    position: absolute;
+    top: 105%;
+    left: 50%;
+    grid-column: 1 / span 2;
+    width: 265px;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 0.15fr 0.70fr 0.15fr;
+    align-items: center;
+    justify-content: center;
+}
+
+.pokemon-number {
+    grid-column: 1 / span 1;
+    justify-content: center;
+}
+
+.pokemon-name {
+    grid-column: 2 / span 1;
+    justify-content: center;
+}
+
+.pokemon-image img {
+    width: 11rem;
+    grid-column: 1 / span 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pokemon-not-found {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-screen {
+    position: relative;
+    margin: 1.5rem 3rem 1.2rem 0;
+}
+
+.info-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-input {
+    position: absolute;
+    top: 155px; 
+    left: 93px;
+    width: 35%;
+    height: 1.5rem;
+    color: white;
+    background-color: #032d28;
+    border-color: white;
+    border-width: 1.25px;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.info-screen {
+    position: absolute;
+    top: 185px;
+    left: 100px;
+    color: white;
+    width: 267px;
+    height: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 2fr 2fr 2fr 2fr 2fr;
+    overflow: auto;
+}
+
+.info-screen::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+.info-screen::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
