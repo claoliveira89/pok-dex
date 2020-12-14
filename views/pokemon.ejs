@@ -1,0 +1,71 @@
+<%- include("partials/header"); -%>
+
+    <div id="display" class="main-screen-display">
+        <div class="pokemon-number">
+            #<%= pokemon.pokedex_number %>
+        </div>
+        <div class="pokemon-name">
+            name: <%= pokemon.name %>
+        </div>
+        <div class="pokemon-image"><img src="<%- include('partials/showImage'); -%>" alt=""></div>
+        <div class="not-found-message"></div>
+        <div class="pokemon-types">type(s):
+            <%- include("partials/showType"); -%>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="right-screen">
+        <div class="right-screen-top">
+            <form action="/pokemon" method="GET">
+                <div>
+                    <input name="pokemon" class="info-input" type="text" placeholder="Search Pokémon Name or ID">
+                </div>
+            </form>
+        </div>
+        <div class="right-screen-middle">
+            <div class="info-container">
+                <section class="info-screen">
+                    <div class="info">
+                        <div class="label">generation: <%= pokemon.generation %>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="label">hp: <%= pokemon.hp %>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="label">legendary:
+                            <%- include("partials/isLegendary"); -%>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="label">attack: <%= pokemon.attack %>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="label">height: <%= pokemon.height_m %> m</div>
+                    </div>
+                    <div class="info">
+                        <div class="label">defense: <%= pokemon.defense %>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="label">weight: <%= pokemon.weight_kg %> kg</div>
+                    </div>
+                    <div class="info">
+                        <div class="label">speed: <%= pokemon.speed %>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div id="abilities" class="label">abilities:
+                            <%- include("partials/showAbilities"); -%>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div id="classification" class="label">classification: <%= pokemon.classfication %>
+                        </div>
+                    </div>
+                </section>
+                <%- include("partials/footer"); -%>

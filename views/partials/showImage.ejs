@@ -1,0 +1,7 @@
+<% if(Number(pokemon.pokedex_number) < 10) { %>
+    https://assets.pokemon.com/assets/cms2/img/pokedex/full/00<%= pokemon.pokedex_number %>.png
+        <% } else if (Number(pokemon.pokedex_number) < 100) { %>
+            https://assets.pokemon.com/assets/cms2/img/pokedex/full/0<%= pokemon.pokedex_number %>.png
+                <% } else { %>
+                    https://assets.pokemon.com/assets/cms2/img/pokedex/full/<%= pokemon.pokedex_number %>.png
+                        <% } %>

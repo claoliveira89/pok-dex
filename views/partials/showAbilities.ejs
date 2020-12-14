@@ -1,0 +1,7 @@
+<%let str='' %>
+    <% for(let char of pokemon.abilities) { %>
+        <% if(char!=='[' && char !==']' && char!=='\'' ) { %>
+                <%str += char%>
+            <% } %>
+        <% } %>
+    <%=str%>

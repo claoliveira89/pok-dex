@@ -20,7 +20,10 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-const csvFilePath = './assets/pokemon.csv';
+app.use('/public', express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+
+const csvFilePath = './public/assets/data/pokemon.csv';
 const csv = require('csvtojson');
 csv()
     .fromFile(csvFilePath)
@@ -38,6 +41,20 @@ csv()
 
 app.get('/', (req, res) => {
     res.render('home');
+});
+
+app.get('/pokemon', async (req, res) => {
+    let search = req.query.pokemon;
+    search = search.charAt(0).toUpperCase() + search.slice(1);
+    const data = await Pokemon.find({ $or: [{ 'name': search }, { 'pokedex_number': search }] })
+        .catch(err => {
+            console.log(err);
+        });
+    let pokemon = data[0];
+    if (pokemon === undefined) {
+        res.render('notFound');
+    }
+    res.render('pokemon', { pokemon });
 });
 
 app.listen(8080, () => {
